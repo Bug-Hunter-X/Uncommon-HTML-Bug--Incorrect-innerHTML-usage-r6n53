@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Bug Solution</title>
+</head>
+<body>
+  <div id="myDiv"></div>
+  <script>
+    // Correct usage of innerHTML by constructing the entire HTML string first
+    const paragraph = '<p>This is a paragraph.</p>';
+    const span = '<span>This is a span.</span>';
+    document.getElementById("myDiv").innerHTML = paragraph + span;
+    
+    //Alternative approach using DOM manipulation
+    const para = document.createElement('p');
+    para.textContent = 'This is a paragraph.';
+    const sp = document.createElement('span');
+    sp.textContent = 'This is a span.';
+    const myDiv = document.getElementById('myDiv');
+    myDiv.appendChild(para);
+    myDiv.appendChild(sp);
+  </script>
+</body>
+</html>
