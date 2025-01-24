@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Bug</title>
+</head>
+<body>
+  <div id="myDiv"></div>
+  <script>
+    // Incorrect usage of innerHTML with a partially constructed element
+    document.getElementById("myDiv").innerHTML = '<p>This is a paragraph.' + <span>This is a span.</span>;
+  </script>
+</body>
+</html>
